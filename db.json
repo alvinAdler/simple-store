@@ -1,0 +1,47 @@
+{
+  "items": [
+    {
+      "id": 101,
+      "itemName": "Solid White Room",
+      "itemPrice": 500000,
+      "imageUrl": "https://images.unsplash.com/photo-1600420870295-5e00aac0be39?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDl8Ul9GeW4tR3d0bHd8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "itemMotto": "Simple and Elegant",
+      "itemDesc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dignissimos officiis, non alias odio minus enim ullam labore magni, quos minima quisquam beatae itaque sed quasi, sint aliquam ratione? Quas.|||Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores, debitis alias quae, provident quos sunt fugit modi laborum aperiam tenetur autem dolor nihil molestiae nemo doloribus officiis. Eligendi, cumque dignissimos.|||Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dignissimos officiis, non alias odio minus enim ullam labore magni, quos minima quisquam beatae itaque sed quasi, sint aliquam ratione? Quas."
+    },
+    {
+      "id": 102,
+      "itemName": "Solid Brown Room",
+      "itemPrice": 750000,
+      "imageUrl": "https://images.unsplash.com/photo-1551133990-70307d02dc94?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8Ul9GeW4tR3d0bHd8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "itemMotto": "Solid and Sturdy",
+      "itemDesc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dignissimos officiis, non alias odio minus enim ullam labore magni, quos minima quisquam beatae itaque sed quasi, sint aliquam ratione? Quas.|||Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores, debitis alias quae, provident quos sunt fugit modi laborum aperiam tenetur autem dolor nihil molestiae nemo doloribus officiis. Eligendi, cumque dignissimos."
+    },
+    {
+      "id": 103,
+      "itemName": "Splendid Dark Room",
+      "itemPrice": 850000,
+      "imageUrl": "https://images.unsplash.com/photo-1532579821608-3f220ab206e7?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDMyfFJfRnluLUd3dGx3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "itemMotto": "Biasful Darkness",
+      "itemDesc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dignissimos officiis, non alias odio minus enim ullam labore magni, quos minima quisquam beatae itaque sed quasi, sint aliquam ratione? Quas.|||Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores, debitis alias quae, provident quos sunt fugit modi laborum aperiam tenetur autem dolor nihil molestiae nemo doloribus officiis. Eligendi, cumque dignissimos.|||Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dignissimos officiis, non alias odio minus enim ullam labore magni, quos minima quisquam beatae itaque sed quasi, sint aliquam ratione? Quas."
+    },
+    {
+      "id": 104,
+      "itemName": "Glamorous Local Room",
+      "itemPrice": 900000,
+      "imageUrl": "https://images.unsplash.com/photo-1549221495-8c6768f275be?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDM0fFJfRnluLUd3dGx3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "itemMotto": "Treat the King like a King",
+      "itemDesc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dignissimos officiis, non alias odio minus enim ullam labore magni, quos minima quisquam beatae itaque sed quasi, sint aliquam ratione? Quas.|||Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores, debitis alias quae, provident quos sunt fugit modi laborum aperiam tenetur autem dolor nihil molestiae nemo doloribus officiis. Eligendi, cumque dignissimos."
+    },
+    {
+      "id": 105,
+      "itemName": "Simple Artistic Room",
+      "itemPrice": 650000,
+      "imageUrl": "https://images.unsplash.com/photo-1624884151217-4281b62c4c39?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDU2fFJfRnluLUd3dGx3fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "itemMotto": "As beautiful as abstraction",
+      "itemDesc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dignissimos officiis, non alias odio minus enim ullam labore magni, quos minima quisquam beatae itaque sed quasi, sint aliquam ratione? Quas.|||Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores, debitis alias quae, provident quos sunt fugit modi laborum aperiam tenetur autem dolor nihil molestiae nemo doloribus officiis. Eligendi, cumque dignissimos."
+    }
+  ],
+  "payments": [
+
+  ]
+}

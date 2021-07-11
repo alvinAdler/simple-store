@@ -1,0 +1,24 @@
+.main-counter {
+    /* border: 3px solid purple; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.indicator-badge {
+    padding: 0.5rem 1rem;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-counter button {
+    margin-left: 15px;
+}
+
+.btn-remove {
+    justify-self: flex-end;
+}
