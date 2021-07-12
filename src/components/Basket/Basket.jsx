@@ -19,11 +19,11 @@ class Basket extends Component {
                     <tbody>
                         <tr>
                             <td width="15%">Item Count: </td>
-                            <td>{itemsQuantity}</td>
+                            <td>{itemsQuantity === 0 ? "No items selected" : itemsQuantity}</td>
                         </tr>
                         <tr>
                             <td width="15%">Item Price: </td>
-                            <td>{itemsTotal}</td>
+                            <td>{itemsTotal === 0 ? "No items selected" : "Rp. " + itemsTotal.toString()}</td>
                         </tr>
                     </tbody>
                 </table>

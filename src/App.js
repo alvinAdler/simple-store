@@ -9,6 +9,7 @@ import Basket from './components/Basket/Basket'
 function App () {
   const [items, setItems] = useState([])
   const quantityCounter = useRef(0)
+  const itemsTotal = useRef(0)
   const [itemCounter, setItemCounter] = useState({}) //Contains which item is being counted (name and amount)
 
   useEffect(() => {
@@ -33,6 +34,14 @@ function App () {
     setItemCounter({})
   }
 
+  const getPrice = (itemID) => {
+    for(let item in items){
+      if(items[item].id === itemID){
+        return items[item].itemPrice
+      }
+    }
+  }
+
   const handleItemRemove = (itemID) => {
     delete itemCounter[itemID]
     setItems(items.filter((item) => item.id !== itemID))
@@ -52,9 +61,15 @@ function App () {
           console.log("Existing item")
           dummyObj[itemID] = dummyObj[itemID] + 1
         }
+
         quantityCounter.current = quantityCounter.current + 1
+        
+        itemsTotal.current = itemsTotal.current + getPrice(itemID) 
+
         setItemCounter({...dummyObj})
+
         break;
+
       case "decrement":
         console.log("Item " + itemID.toString() + " decremented")
         dummyObj = {...itemCounter}
@@ -63,15 +78,19 @@ function App () {
         if(dummyObj[itemID] === 0){
           delete dummyObj[itemID]
         }
+
         quantityCounter.current = quantityCounter.current - 1
+        itemsTotal.current = itemsTotal.current - getPrice(itemID) 
+
         setItemCounter({...dummyObj})
+        
         break;
 
       default:
         break;
     }
 
-    console.log(quantityCounter.current)
+    console.log("===============SEPARATOR===============")
   }
 
 
@@ -88,7 +107,7 @@ function App () {
         <Basket 
         onAllItemReset = {handleItemsReset}
         onItemsCheckout = {handleItemsCheckout}
-        itemsTotal = "Rp. 500000"
+        itemsTotal = {itemsTotal.current}
         itemsQuantity = {quantityCounter.current}
         />
 
