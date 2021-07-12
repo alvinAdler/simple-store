@@ -28,6 +28,7 @@ class Item extends Component {
             5. itemDesc
         */
         const {
+            id: itemId,
             itemName, 
             itemPrice, 
             imageUrl, 
@@ -46,7 +47,9 @@ class Item extends Component {
                             <FaCaretSquareDown className="item-dropdown" onClick={this.handleDescDisplay}/>
                         }
                     </div>
-                    <Counter/>
+                    <Counter 
+                    onChangeDetails = {{execute: this.props.onChangeQuantity, itemId:itemId}}
+                    itemCounter = {this.props.itemCounter}/>
                 </section>
                 {this.state.currentItemDisplay &&
                     <section className="desc-section">

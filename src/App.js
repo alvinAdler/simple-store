@@ -8,10 +8,7 @@ import Basket from './components/Basket/Basket'
 
 function App () {
   const [items, setItems] = useState([])
-  const [itemCounter, setItemCounter] = useState({
-    totalCounter: 0, //The total number of item within the itemList
-    itemList: [] //List of items that contains the item name and quantity
-  })
+  const [itemCounter, setItemCounter] = useState({}) //Contains which item is being counted (name and amount)
 
   useEffect(() => {
     axios({
@@ -26,6 +23,43 @@ function App () {
     })
   }, [])
 
+  const handleItemsReset = () => {
+    console.log("Reset all Items")
+    console.log(itemCounter)
+  }
+
+  const handleItemsChange = (itemID, itemOperation) => {
+    let dummyObj = {...itemCounter}
+
+    //itemOperation is either increment or decrement
+    switch (itemOperation) {
+      case "increment": 
+        if(!(itemID in itemCounter)){
+          console.log("New item")
+          dummyObj[itemID] = 1
+        }else{
+          console.log("Existing item")
+          dummyObj[itemID] = dummyObj[itemID] + 1
+        }
+
+        setItemCounter({...dummyObj})
+        break;
+      case "decrement":
+        console.log("Item " + itemID.toString() + " decremented")
+        dummyObj = {...itemCounter}
+        dummyObj[itemID] = dummyObj[itemID] - 1
+
+        if(dummyObj[itemID] === 0){
+          delete dummyObj[itemID]
+        }
+
+        setItemCounter({...dummyObj})
+        break;
+      default:
+        break;
+    }
+  }
+
     return (    
       <div className="App container">
         <div className="sample-header jumbotron">
@@ -35,11 +69,15 @@ function App () {
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus qui rerum ipsam? Tempora quasi officia fuga suscipit, veritatis sed totam placeat error voluptatum, obcaecati similique. Exercitationem eaque qui ipsa labore!</p>
         </div>
 
-        <Basket/>
+        <Basket onAllItemReset = {handleItemsReset}/>
 
         {items.map((item, index) => {
           return(
-            <Item key={index} itemDetails={item}/>
+            <Item key={index} 
+            itemDetails={item} 
+            itemCounter={itemCounter}
+            onChangeQuantity={handleItemsChange}
+            />
           )
         })}
         

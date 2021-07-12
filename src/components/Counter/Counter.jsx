@@ -16,13 +16,21 @@ class Counter extends Component {
     }
 
     render() { 
+        let itemID = this.props.onChangeDetails.itemId
+        let currentCounter = this.props.itemCounter
+        let isItemExist = this.props.onChangeDetails.itemId in this.props.itemCounter
         return (
             <div className="main-counter">
-                <span className={"indicator-badge badge " + (this.state.counter === 0 ? "badge-warning" : "badge-primary")}>
-                    {this.state.counter === 0 ? "Zero" : this.state.counter}
+                <span className={"indicator-badge badge " + (isItemExist ? "badge-primary" : "badge-warning")}>
+                    {isItemExist ? 
+                    currentCounter[itemID]
+                    : 
+                    "Zero"}
+                    
                 </span>
-                <button className="btn btn-secondary" onClick={this.incrementCounter}>+</button>
-                <button className="btn btn-secondary" onClick={this.decrementCounter} disabled={this.state.counter <= 0}>-</button>
+                <button className="btn btn-secondary" onClick={() => this.props.onChangeDetails.execute(this.props.onChangeDetails.itemId, "increment")}>+</button>
+                <button className="btn btn-secondary" onClick={() => this.props.onChangeDetails.execute(this.props.onChangeDetails.itemId, "decrement")} disabled={!isItemExist}>-</button>
+ 
 
                 <button className="btn-remove btn btn-danger">Remove</button>
             </div>

@@ -3,8 +3,15 @@ import React, { Component } from 'react'
 import './Basket_master.css'
 
 class Basket extends Component {
-    state = {  }
+    state = { 
+
+    }
+
     render() { 
+        const {
+            onAllItemReset
+        } = this.props
+
         return (    
             <div className = "basket-container">
                 <h3>Basket</h3>
@@ -21,7 +28,7 @@ class Basket extends Component {
                     </tbody>
                 </table>
                 <div className="price-options">
-                    <button className="btn btn-danger">Reset Item Quantity</button>
+                    <button className="btn btn-danger" onClick = {onAllItemReset}>Reset Item Quantity</button>
                     <button className="btn btn-primary">Checkout</button>
                 </div>
             </div>
