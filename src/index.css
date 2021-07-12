@@ -5,4 +5,5 @@ html, body, #root {
     width: 100%;
     font-family: 'Inter', sans-serif;
     background-color: #f2f2f2;
+    /* border: 3px solid blue; */
 }
