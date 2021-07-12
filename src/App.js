@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios'
 
 import './App.css';
@@ -8,6 +8,7 @@ import Basket from './components/Basket/Basket'
 
 function App () {
   const [items, setItems] = useState([])
+  const quantityCounter = useRef(0)
   const [itemCounter, setItemCounter] = useState({}) //Contains which item is being counted (name and amount)
 
   useEffect(() => {
@@ -22,6 +23,10 @@ function App () {
       console.log(err)
     })
   }, [])
+
+  const handleItemsCheckout = () => {
+    console.log("Items Checked out")
+  }
 
   const handleItemsReset = () => {
     console.log("Reset all Items")
@@ -47,7 +52,7 @@ function App () {
           console.log("Existing item")
           dummyObj[itemID] = dummyObj[itemID] + 1
         }
-
+        quantityCounter.current = quantityCounter.current + 1
         setItemCounter({...dummyObj})
         break;
       case "decrement":
@@ -58,14 +63,18 @@ function App () {
         if(dummyObj[itemID] === 0){
           delete dummyObj[itemID]
         }
-
+        quantityCounter.current = quantityCounter.current - 1
         setItemCounter({...dummyObj})
         break;
 
       default:
         break;
     }
+
+    console.log(quantityCounter.current)
   }
+
+
 
     return (    
       <div className="App container">
@@ -76,7 +85,12 @@ function App () {
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus qui rerum ipsam? Tempora quasi officia fuga suscipit, veritatis sed totam placeat error voluptatum, obcaecati similique. Exercitationem eaque qui ipsa labore!</p>
         </div>
 
-        <Basket onAllItemReset = {handleItemsReset}/>
+        <Basket 
+        onAllItemReset = {handleItemsReset}
+        onItemsCheckout = {handleItemsCheckout}
+        itemsTotal = "Rp. 500000"
+        itemsQuantity = {quantityCounter.current}
+        />
 
         {items.map((item, index) => {
           return(
