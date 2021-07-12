@@ -28,14 +28,12 @@ class Item extends Component {
             5. itemDesc
         */
         const {
-            itemId,
             itemName, 
             itemPrice, 
             imageUrl, 
             itemMotto, 
             itemDesc} = this.props.itemDetails 
 
-            console.log(this.props.itemDetails)
         return ( 
             <div className="item-container">
                 <section className="main-section">
@@ -56,7 +54,6 @@ class Item extends Component {
                         alt="Not Found" 
                         className="item-image"
                         />
-                        {console.log(imageUrl)}
                         <div className="item-desc">
                             <h4>{itemMotto}</h4>
                             {itemDesc.split("|||").map((para, index) => (
