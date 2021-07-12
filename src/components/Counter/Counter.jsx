@@ -32,7 +32,7 @@ class Counter extends Component {
                 <button className="btn btn-secondary" onClick={() => this.props.onChangeDetails.execute(this.props.onChangeDetails.itemId, "decrement")} disabled={!isItemExist}>-</button>
  
 
-                <button className="btn-remove btn btn-danger">Remove</button>
+                <button className="btn-remove btn btn-danger" onClick={() => this.props.onItemRemove(itemID)}>Remove</button>
             </div>
         );
     }

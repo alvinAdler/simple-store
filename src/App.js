@@ -25,7 +25,13 @@ function App () {
 
   const handleItemsReset = () => {
     console.log("Reset all Items")
-    console.log(itemCounter)
+    setItemCounter({})
+  }
+
+  const handleItemRemove = (itemID) => {
+    delete itemCounter[itemID]
+    setItems(items.filter((item) => item.id !== itemID))
+    setItemCounter({...itemCounter})
   }
 
   const handleItemsChange = (itemID, itemOperation) => {
@@ -55,6 +61,7 @@ function App () {
 
         setItemCounter({...dummyObj})
         break;
+
       default:
         break;
     }
@@ -77,6 +84,7 @@ function App () {
             itemDetails={item} 
             itemCounter={itemCounter}
             onChangeQuantity={handleItemsChange}
+            onItemRemove = {handleItemRemove}
             />
           )
         })}

@@ -49,7 +49,9 @@ class Item extends Component {
                     </div>
                     <Counter 
                     onChangeDetails = {{execute: this.props.onChangeQuantity, itemId:itemId}}
-                    itemCounter = {this.props.itemCounter}/>
+                    itemCounter = {this.props.itemCounter}
+                    onItemRemove = {this.props.onItemRemove}
+                    />
                 </section>
                 {this.state.currentItemDisplay &&
                     <section className="desc-section">
