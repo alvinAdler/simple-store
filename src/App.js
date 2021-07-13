@@ -28,7 +28,16 @@ function App () {
   }, [])
 
   const handleItemsCheckout = () => {
-    console.log("Items Checked out")
+    if(quantityCounter.current === 0){
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Your basket is still empty. Go put some goodies into it!",
+        confirmButtonText: "Confirm"
+      })
+
+      return
+    }
 
     Swal.fire({
       icon: "question",
@@ -46,7 +55,8 @@ function App () {
 
 
         */
-
+        quantityCounter.current = 0
+        itemsTotal.current = 0
         setItemCounter({})
 
         Swal.fire({
@@ -61,6 +71,8 @@ function App () {
 
   const handleItemsReset = () => {
     console.log("Reset all Items")
+    quantityCounter.current = 0
+    itemsTotal.current = 0
     setItemCounter({})
   }
 
@@ -73,6 +85,9 @@ function App () {
   }
 
   const handleItemRemove = (itemID) => {
+    quantityCounter.current = quantityCounter.current - itemCounter[itemID]
+    itemsTotal.current = itemsTotal.current - (getPrice(itemID) * itemCounter[itemID])
+
     delete itemCounter[itemID]
     setItems(items.filter((item) => item.id !== itemID))
     setItemCounter({...itemCounter})
