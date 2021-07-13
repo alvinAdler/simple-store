@@ -1,10 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios'
+import Swal from 'sweetalert2'
 
 import './App.css';
 
 import Item from './components/Item/Item'
 import Basket from './components/Basket/Basket'
+
 
 function App () {
   const [items, setItems] = useState([])
@@ -27,6 +29,34 @@ function App () {
 
   const handleItemsCheckout = () => {
     console.log("Items Checked out")
+
+    Swal.fire({
+      icon: "question",
+      title: "Checking out",
+      text: "Total Count is " + quantityCounter.current.toString() + " and total price is: " + itemsTotal.current.toString(),
+      confirmButtonText: "Checkout Now",
+      confirmButtonColor: "#2285e4",
+      showCancelButton: true,
+      cancelButtonColor: "#eb4034",
+    })
+    .then((res) => {
+      if(res.isConfirmed){
+        /*
+        Do the operations for payment
+
+
+        */
+
+        setItemCounter({})
+
+        Swal.fire({
+          icon: "success",
+          title: "Successfully Checked Out",
+          text: "Please come again",
+          confirmButtonText: "dismiss"
+        })
+      }
+    })
   }
 
   const handleItemsReset = () => {
